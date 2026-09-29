@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle, ShieldCheck } from 'lucide-react';
-import { kopdesData } from '../data/dummyData';
+import { profileData } from '../data/dummyData';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 
 const ContactPage = () => {
@@ -25,28 +25,28 @@ const ContactPage = () => {
     {
       icon: MapPin,
       title: "Alamat Kantor Sekretariat",
-      details: kopdesData.kontak.alamat,
+      details: profileData.kontak.alamat,
       action: "Buka Google Maps",
-      link: `https://maps.google.com/?q=${encodeURIComponent(kopdesData.kontak.alamat)}`
+      link: `https://maps.google.com/?q=${encodeURIComponent(profileData.kontak.alamat)}`
     },
     {
       icon: Phone,
       title: "Telepon & WhatsApp Resmi",
-      details: `${kopdesData.kontak.telepon} / ${kopdesData.kontak.whatsapp}`,
+      details: `${profileData.kontak.telepon} / ${profileData.kontak.whatsapp}`,
       action: "Hubungi Langsung",
-      link: `https://wa.me/${kopdesData.kontak.whatsapp.replace(/[^0-9]/g, '')}`
+      link: `https://wa.me/${profileData.kontak.whatsapp.replace(/[^0-9]/g, '')}`
     },
     {
       icon: Mail,
       title: "Email Respon Sekretariat",
-      details: kopdesData.kontak.email,
+      details: profileData.kontak.email,
       action: "Kirim Pesan Email",
-      link: `mailto:${kopdesData.kontak.email}`
+      link: `mailto:${profileData.kontak.email}`
     },
     {
       icon: Clock,
       title: "Jam Pelayanan Kantor",
-      details: kopdesData.kontak.jamKerja,
+      details: profileData.kontak.jamKerja,
       action: "Buka Hari Kerja",
       link: "#"
     }
@@ -64,7 +64,7 @@ const ContactPage = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold font-poppins mb-4"
           >
-            Hubungi Pengurus Kopdes
+            Hubungi Pengurus Profile
           </motion.h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg">
             Kami siap melayani kebutuhan informasi keanggotaan, pendaftaran unit layanan usaha, dan kerjasama kemitraan desa.
@@ -79,7 +79,7 @@ const ContactPage = () => {
           <SectionTitle
             subtitle="Pusat Informasi"
             title="Lokasi Kantor & Formulir Pesan"
-            highlight="Kopdes"
+            highlight="Profile"
             badge="Pelayanan Warga"
           />
 
@@ -132,13 +132,13 @@ const ContactPage = () => {
                 Kirim Pesan Ke Pengurus
               </h3>
               <p className="text-slate-500 text-xs sm:text-sm mb-6">
-                Sampaikan pertanyaan atau permohonan informasi mengenai program Koperasi Desa Merah Putih.
+                Sampaikan pertanyaan atau permohonan informasi mengenai program Profil Perusahaan Merah Putih.
               </p>
 
               {isSubmitted && (
                 <div className="mb-6 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                  <span>Pesan Anda berhasil terkirim ke sekretariat Kopdes Merah Putih. Pengurus kami akan menghubungi Anda.</span>
+                  <span>Pesan Anda berhasil terkirim ke sekretariat Profil Perusahaan. Pengurus kami akan menghubungi Anda.</span>
                 </div>
               )}
 

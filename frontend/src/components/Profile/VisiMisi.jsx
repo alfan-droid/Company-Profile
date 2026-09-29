@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Compass } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
 const VisiMisi = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
 
   return (
     <section id="visi-misi" className="py-16 sm:py-20 bg-slate-50 border-b border-slate-200 scroll-mt-20">
@@ -13,7 +13,7 @@ const VisiMisi = () => {
         
         <SectionTitle
           subtitle="Tujuan & Arah Gerak"
-          title="Visi & Misi Kopdes"
+          title="Visi & Misi Profile"
           highlight="Merah Putih"
           badge="Prinsip Landasan"
         />
@@ -39,7 +39,7 @@ const VisiMisi = () => {
               </h3>
 
               <p className="text-slate-600 text-sm leading-relaxed italic">
-                "{kopdesData.visi}"
+                "{profileData.visi}"
               </p>
             </div>
 
@@ -65,7 +65,7 @@ const VisiMisi = () => {
               </h3>
 
               <div className="space-y-3.5">
-                {(typeof kopdesData.misi === 'string' ? kopdesData.misi.split('\n').filter(Boolean) : kopdesData.misi || []).map((misiText, idx) => (
+                {(typeof profileData.misi === 'string' ? profileData.misi.split('\n').filter(Boolean) : profileData.misi || []).map((misiText, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded bg-red-50 text-primary border border-red-100 flex items-center justify-center flex-shrink-0 mt-0.5 font-bold text-xs">
                       {idx + 1}

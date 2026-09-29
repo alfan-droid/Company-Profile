@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LayoutDashboard, UserCheck, Building2, Image as ImageIcon, Phone, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 
 const AdminDashboard = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
 
   const statCards = [
     {
@@ -17,7 +17,7 @@ const AdminDashboard = () => {
     },
     {
       title: "Unit Layanan Usaha",
-      count: `${kopdesData.layanan.length} Unit`,
+      count: `${profileData.layanan.length} Unit`,
       sub: "Daftar unit layanan aktif",
       icon: Building2,
       link: "/admin/layanan",
@@ -25,7 +25,7 @@ const AdminDashboard = () => {
     },
     {
       title: "Galeri Dokumentasi",
-      count: `${kopdesData.galeri.length} Momen`,
+      count: `${profileData.galeri.length} Momen`,
       sub: "Foto & Video kegiatan",
       icon: ImageIcon,
       link: "/admin/galeri",
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
             Dasbor Utama Pengelolaan Content
           </h1>
           <p className="text-slate-600 text-xs sm:text-sm mt-1">
-            Kelola data profil, unit layanan usaha, galeri dokumentasi, dan kontak cabang {kopdesData.branchName}.
+            Kelola data profil, unit layanan usaha, galeri dokumentasi, dan kontak cabang {profileData.branchName}.
           </p>
         </div>
 
@@ -109,15 +109,15 @@ const AdminDashboard = () => {
           <div className="space-y-2 text-xs">
             <div className="flex justify-between p-2.5 bg-slate-50 rounded-lg border border-slate-200">
               <span className="font-semibold text-slate-600">Badan Hukum:</span>
-              <span className="font-bold text-slate-900">{kopdesData.legal.badanHukum}</span>
+              <span className="font-bold text-slate-900">{profileData.legal.badanHukum}</span>
             </div>
             <div className="flex justify-between p-2.5 bg-slate-50 rounded-lg border border-slate-200">
               <span className="font-semibold text-slate-600">Wilayah Operasional:</span>
-              <span className="font-bold text-slate-900">{kopdesData.legal.wilayahKerja}</span>
+              <span className="font-bold text-slate-900">{profileData.legal.wilayahKerja}</span>
             </div>
             <div className="flex justify-between p-2.5 bg-slate-50 rounded-lg border border-slate-200">
               <span className="font-semibold text-slate-600">Alamat Kantor:</span>
-              <span className="font-bold text-slate-900 line-clamp-1">{kopdesData.kontak.alamat}</span>
+              <span className="font-bold text-slate-900 line-clamp-1">{profileData.kontak.alamat}</span>
             </div>
           </div>
         </div>
@@ -134,19 +134,19 @@ const AdminDashboard = () => {
           <div className="grid grid-cols-2 gap-2 text-xs">
             <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
               <span className="text-[10px] text-slate-500 font-bold uppercase">Ketua</span>
-              <p className="font-bold text-slate-900 mt-0.5">{kopdesData.pengurus.ketua?.nama}</p>
+              <p className="font-bold text-slate-900 mt-0.5">{profileData.pengurus.ketua?.nama}</p>
             </div>
             <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
               <span className="text-[10px] text-slate-500 font-bold uppercase">Sekretaris</span>
-              <p className="font-bold text-slate-900 mt-0.5">{kopdesData.pengurus.sekretaris?.nama}</p>
+              <p className="font-bold text-slate-900 mt-0.5">{profileData.pengurus.sekretaris?.nama}</p>
             </div>
             <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
               <span className="text-[10px] text-slate-500 font-bold uppercase">Bendahara</span>
-              <p className="font-bold text-slate-900 mt-0.5">{kopdesData.pengurus.bendahara?.nama}</p>
+              <p className="font-bold text-slate-900 mt-0.5">{profileData.pengurus.bendahara?.nama}</p>
             </div>
             <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
               <span className="text-[10px] text-slate-500 font-bold uppercase">Pengawas</span>
-              <p className="font-bold text-slate-900 mt-0.5">{kopdesData.pengurus.pengawas?.nama}</p>
+              <p className="font-bold text-slate-900 mt-0.5">{profileData.pengurus.pengawas?.nama}</p>
             </div>
           </div>
         </div>

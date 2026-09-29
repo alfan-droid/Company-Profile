@@ -37,7 +37,7 @@ const StatisticCard = () => {
             transition={{ delay: 0.1 }}
             className="text-2xl sm:text-4xl font-extrabold text-white font-poppins"
           >
-            Pencapaian & Integritas Koperasi Kami
+            Pencapaian & Integritas Perusahaan Kami
           </motion.h2>
         </div>
 

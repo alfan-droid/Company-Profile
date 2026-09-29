@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Plus, Edit2, Trash2, CheckCircle2, Save, X, Building2 } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 
 const AdminLayanan = () => {
-  const { kopdesData, addLayanan, updateLayanan, deleteLayanan } = useKopdes();
+  const { profileData, addLayanan, updateLayanan, deleteLayanan } = useProfile();
   const [successMessage, setSuccessMessage] = useState('');
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -83,7 +83,7 @@ const AdminLayanan = () => {
         <div>
           <h1 className="text-xl font-extrabold text-slate-900">Pengelolaan Unit Layanan Usaha</h1>
           <p className="text-xs text-slate-600 mt-1">
-            Tambah, edit, dan hapus unit layanan usaha Kopdes (Dinamis). Total aktif: {kopdesData.layanan.length} Unit.
+            Tambah, edit, dan hapus unit layanan usaha Profile (Dinamis). Total aktif: {profileData.layanan.length} Unit.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ const AdminLayanan = () => {
 
       {/* Services List Table / Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {kopdesData.layanan.map((unit, index) => (
+        {profileData.layanan.map((unit, index) => (
           <div
             key={unit.id}
             className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between"

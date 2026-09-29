@@ -22,7 +22,7 @@ const GalleryPage = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold font-poppins mb-4"
           >
-            Dokumentasi Aktivitas Koperasi
+            Dokumentasi Aktivitas Perusahaan
           </motion.h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg">
             Kumpulan momen kebersamaan panen raya, Rapat Anggota Tahunan, serta pelatihan pemberdayaan UMKM desa.

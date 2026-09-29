@@ -1,5 +1,5 @@
 export const APP_CONFIG = {
-  NAME: 'Koperasi Tani Pangan Mandiri',
+  NAME: 'Perusahaan Tani Pangan Mandiri',
   SHORT_NAME: 'KTPM',
   SLOGAN: 'Wujud Nyata Gotong Royong Ekonomi Desa & Pertanian Modern',
   CONTACT: {

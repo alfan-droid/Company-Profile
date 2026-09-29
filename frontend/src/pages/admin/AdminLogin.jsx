@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 import { supabase } from '../../config/supabaseClient';
 
 const AdminLogin = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
@@ -49,11 +49,11 @@ const AdminLogin = () => {
 
         <div className="bg-white p-8 text-center border-b border-slate-200">
           <img
-            src={kopdesData.logo}
-            alt="Logo Kopdes"
+            src={profileData.logo}
+            alt="Logo Profile"
             className="h-16 w-auto object-contain mx-auto mb-3"
           />
-          <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">{kopdesData.shortName}</h2>
+          <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">{profileData.shortName}</h2>
           <p className="text-xs text-primary font-bold uppercase tracking-wider mt-1">
             Portal Administrasi Resmi Cabang
           </p>
@@ -84,7 +84,7 @@ const AdminLogin = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@kopdes.com"
+                placeholder="admin@profile.com"
                 className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm font-medium text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
               />
             </div>
@@ -98,7 +98,7 @@ const AdminLogin = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm font-medium text-slate-900 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors pr-10"
                 />
               </div>
@@ -124,7 +124,7 @@ const AdminLogin = () => {
           </Link>
 
           <span className="flex items-center gap-1 text-[11px]">
-            <span>Kopdes Merah Putih</span>
+            <span>Profil Perusahaan</span>
           </span>
         </div>
 

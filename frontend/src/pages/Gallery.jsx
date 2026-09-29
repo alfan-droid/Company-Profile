@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import GalleryCard from '../components/GalleryCard/GalleryCard';
-import { useKopdes } from '../context/KopdesContext';
+import { useProfile } from '../context/ProfileContext';
 import { X, Calendar, Play } from 'lucide-react';
 
 const Gallery = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
   const [activeItem, setActiveItem] = useState(null);
 
   const getEmbedUrl = (urlStr) => {
@@ -49,7 +49,7 @@ const Gallery = () => {
       <section className="py-14 bg-slate-900 text-white relative overflow-hidden border-b border-slate-800">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-3">
-            Galeri Kopdes Merah Putih
+            Galeri Profil Perusahaan
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
             Dokumentasi foto dan video kegiatan musyawarah, panen raya, pelatihan UMKM, serta pelayanan lapangan.
@@ -68,19 +68,19 @@ const Gallery = () => {
             badge="Dokumentasi Resmi"
           />
 
-          {(!kopdesData.galeri || kopdesData.galeri.length === 0) ? (
+          {(!profileData.galeri || profileData.galeri.length === 0) ? (
             <div className="text-center py-16 bg-white rounded-xl border border-slate-200 p-8 max-w-md mx-auto shadow-sm">
               <div className="w-14 h-14 bg-red-50 text-primary rounded-full flex items-center justify-center mx-auto mb-4 border border-red-100">
                 <Calendar className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-slate-900 mb-1">Belum Ada Dokumentasi</h3>
               <p className="text-xs text-slate-500 leading-relaxed">
-                Dokumentasi kegiatan dan momen lapangan koperasi akan segera diperbarui.
+                Dokumentasi kegiatan dan momen lapangan perusahaan akan segera diperbarui.
               </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {kopdesData.galeri.map((item, index) => (
+              {profileData.galeri.map((item, index) => (
                 <GalleryCard
                   key={item.id}
                   item={item}

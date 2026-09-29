@@ -19,7 +19,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase mb-4"
           >
-            Tentang Koperasi
+            Tentang Perusahaan
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
@@ -30,7 +30,7 @@ const About = () => {
             Sejarah, Visi & Komitmen Kami
           </motion.h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg">
-            Mengenal lebih dekat Koperasi Tani Pangan Mandiri dalam memajukan kedaulatan pangan dan perekonomian pedesaan.
+            Mengenal lebih dekat Perusahaan Tani Pangan Mandiri dalam memajukan kedaulatan pangan dan perekonomian pedesaan.
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ const About = () => {
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-bold uppercase text-primary-600 tracking-wider">Perjalanan 15 Tahun</span>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-poppins leading-tight">
-                Dari Kelompok Tani Kecil Menjadi Koperasi Digital Terpercaya
+                Dari Kelompok Tani Kecil Menjadi Perusahaan Digital Terpercaya
               </h2>
               <p className="text-slate-600 text-base leading-relaxed">
                 {profileData.description}
@@ -52,8 +52,8 @@ const About = () => {
                   Legalitas & Pengawasan Resmi
                 </h4>
                 <ul className="space-y-1.5 text-xs text-slate-700 font-medium">
-                  <li>• Izin Usaha Koperasi No. 503/KOP-142/2011</li>
-                  <li>• Terdaftar Resmi di Kementerian Koperasi & UKM RI</li>
+                  <li>• Izin Usaha Perusahaan No. 503/KOP-142/2011</li>
+                  <li>• Terdaftar Resmi di Kementerian Perusahaan & UKM RI</li>
                   <li>• Sertifikasi Pengawas Syariah No. 042/DSN-MUI/2018</li>
                 </ul>
               </div>
@@ -63,7 +63,7 @@ const About = () => {
               <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] border-4 border-slate-100">
                 <img
                   src={profileData.image}
-                  alt="Tentang Koperasi Tani Pangan Mandiri"
+                  alt="Tentang Perusahaan Tani Pangan Mandiri"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -111,7 +111,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             subtitle="Keunggulan"
-            title="6 Nilai Utama Koperasi"
+            title="6 Nilai Utama Perusahaan"
             badge="Keunggulan"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

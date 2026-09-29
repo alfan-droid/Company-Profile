@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 
 const Navbar = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -135,16 +135,16 @@ const Navbar = () => {
           {/* Logo Brand */}
           <Link to="/" className="flex items-center gap-3.5 focus:outline-none">
             <img
-              src={kopdesData.logo}
-              alt="Logo Kopdes"
+              src={profileData.logo}
+              alt="Logo Profile"
               className="h-10 sm:h-12 w-auto object-contain"
             />
             <div className="hidden sm:flex flex-col border-l border-slate-200 pl-3.5">
               <span className="font-bold text-base leading-none text-slate-900 tracking-tight">
-                KOPDES <span className="uppercase">{kopdesData.namaKoperasi || 'Desa Anda'}</span>
+                PROFIL PERUSAHAAN <span className="uppercase">{profileData.namaPerusahaan || 'Desa Anda'}</span>
               </span>
               <span className="text-[11px] font-semibold text-primary uppercase tracking-wider mt-1">
-                Portal Resmi Koperasi Desa
+                Portal Resmi Profil Perusahaan
               </span>
             </div>
           </Link>

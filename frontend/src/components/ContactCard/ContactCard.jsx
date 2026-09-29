@@ -99,7 +99,7 @@ const ContactCard = () => {
           Kirim Pesan / Pertanyaan
         </h3>
         <p className="text-slate-500 text-sm mb-8">
-          Tim pengurus Koperasi Tani Pangan Mandiri siap melayani informasi keanggotaan dan pembiayaan.
+          Tim pengurus Perusahaan Tani Pangan Mandiri siap melayani informasi keanggotaan dan pembiayaan.
         </p>
 
         {isSubmitted && (

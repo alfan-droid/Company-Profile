@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes/AppRoutes';
 import { AuthProvider } from './context/AuthContext';
-import { KopdesProvider } from './context/KopdesContext';
+import { ProfileProvider } from './context/ProfileContext';
 
 function App() {
   return (
     <AuthProvider>
-      <KopdesProvider>
+      <ProfileProvider>
         <Router>
           <AppRoutes />
         </Router>
-      </KopdesProvider>
+      </ProfileProvider>
     </AuthProvider>
   );
 }

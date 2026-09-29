@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#C62828', // Merah Kopdes Formal
+          DEFAULT: '#C62828', // Merah Profile Formal
           50: '#FEF2F2',
           100: '#FEE2E2',
           200: '#FCA5A5',

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Flag, ShieldCheck } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 
 const Footer = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
 
   return (
     <footer className="bg-slate-900 text-slate-300 pt-12 pb-8 border-t border-slate-800">
@@ -16,27 +16,27 @@ const Footer = () => {
           <div className="lg:col-span-5 space-y-3.5">
             <Link to="/" className="flex items-center gap-3">
               <img
-                src={kopdesData.logo}
-                alt={kopdesData.name}
+                src={profileData.logo}
+                alt={profileData.name}
                 className="h-11 w-auto object-contain bg-white p-1 rounded-md"
               />
               <div className="flex flex-col">
                 <span className="font-bold text-base leading-none text-white uppercase">
-                  KOPDES {kopdesData.namaKoperasi || 'Desa Anda'}
+                  PROFIL PERUSAHAAN {profileData.namaPerusahaan || 'Desa Anda'}
                 </span>
                 <span className="text-[10px] font-semibold text-red-400 uppercase tracking-wider mt-1">
-                  Koperasi Desa Merah Putih
+                  Profil Perusahaan Merah Putih
                 </span>
               </div>
             </Link>
 
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-md">
-              {kopdesData.description}
+              {profileData.description}
             </p>
 
             <div className="pt-1 flex items-center gap-2 text-xs text-slate-400 font-medium">
               <ShieldCheck className="w-4 h-4 text-red-500 flex-shrink-0" />
-              <span>Badan Hukum Resmi: {kopdesData.legal?.badanHukum}</span>
+              <span>Badan Hukum Resmi: {profileData.legal?.badanHukum}</span>
             </div>
           </div>
 
@@ -48,7 +48,7 @@ const Footer = () => {
             <ul className="space-y-2 text-xs sm:text-sm font-medium">
               <li>
                 <Link to="/" className="text-slate-400 hover:text-white transition-colors">
-                  Profil Kopdes
+                  Profil Profile
                 </Link>
               </li>
               <li>
@@ -63,7 +63,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/admin/login" className="text-slate-400 hover:text-white transition-colors">
-                  Portal Admin Kopdes
+                  Portal Admin Profile
                 </Link>
               </li>
             </ul>
@@ -78,17 +78,17 @@ const Footer = () => {
             <div className="space-y-2.5 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>{kopdesData.kontak?.alamat || 'Alamat sekretariat belum diatur'}</span>
+                <span>{profileData.kontak?.alamat || 'Alamat sekretariat belum diatur'}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-red-500 flex-shrink-0" />
                 <span>
-                  {[kopdesData.kontak?.telepon, kopdesData.kontak?.whatsapp].filter(Boolean).join(' / ') || 'Kontak belum diatur'}
+                  {[profileData.kontak?.telepon, profileData.kontak?.whatsapp].filter(Boolean).join(' / ') || 'Kontak belum diatur'}
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-red-500 flex-shrink-0" />
-                <span>{kopdesData.kontak?.email || 'info@kopdes.id'}</span>
+                <span>{profileData.kontak?.email || 'info@profile.id'}</span>
               </div>
             </div>
 
@@ -97,32 +97,32 @@ const Footer = () => {
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Media Sosial Resmi</p>
               <div className="flex items-center gap-2.5">
                 <a
-                  href={kopdesData.kontak?.sosialMedia?.facebook || '#'}
-                  target={kopdesData.kontak?.sosialMedia?.facebook ? '_blank' : undefined}
+                  href={profileData.kontak?.sosialMedia?.facebook || '#'}
+                  target={profileData.kontak?.sosialMedia?.facebook ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded bg-slate-800 text-slate-300 hover:text-white hover:bg-primary transition-colors flex items-center justify-center"
                   aria-label="Facebook"
-                  onClick={(e) => !kopdesData.kontak?.sosialMedia?.facebook && e.preventDefault()}
+                  onClick={(e) => !profileData.kontak?.sosialMedia?.facebook && e.preventDefault()}
                 >
                   <Facebook className="w-4 h-4" />
                 </a>
                 <a
-                  href={kopdesData.kontak?.sosialMedia?.instagram || '#'}
-                  target={kopdesData.kontak?.sosialMedia?.instagram ? '_blank' : undefined}
+                  href={profileData.kontak?.sosialMedia?.instagram || '#'}
+                  target={profileData.kontak?.sosialMedia?.instagram ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded bg-slate-800 text-slate-300 hover:text-white hover:bg-primary transition-colors flex items-center justify-center"
                   aria-label="Instagram"
-                  onClick={(e) => !kopdesData.kontak?.sosialMedia?.instagram && e.preventDefault()}
+                  onClick={(e) => !profileData.kontak?.sosialMedia?.instagram && e.preventDefault()}
                 >
                   <Instagram className="w-4 h-4" />
                 </a>
                 <a
-                  href={kopdesData.kontak?.sosialMedia?.youtube || '#'}
-                  target={kopdesData.kontak?.sosialMedia?.youtube ? '_blank' : undefined}
+                  href={profileData.kontak?.sosialMedia?.youtube || '#'}
+                  target={profileData.kontak?.sosialMedia?.youtube ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded bg-slate-800 text-slate-300 hover:text-white hover:bg-primary transition-colors flex items-center justify-center"
                   aria-label="YouTube"
-                  onClick={(e) => !kopdesData.kontak?.sosialMedia?.youtube && e.preventDefault()}
+                  onClick={(e) => !profileData.kontak?.sosialMedia?.youtube && e.preventDefault()}
                 >
                   <Youtube className="w-4 h-4" />
                 </a>
@@ -135,10 +135,10 @@ const Footer = () => {
 
         {/* Bottom Copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-medium gap-3">
-          <p>© {new Date().getFullYear()} KOPDES {kopdesData.namaKoperasi || 'Desa Anda'}. Hak Cipta Dilindungi Undang-Undang.</p>
+          <p>© {new Date().getFullYear()} PROFIL PERUSAHAAN {profileData.namaPerusahaan || 'Desa Anda'}. Hak Cipta Dilindungi Undang-Undang.</p>
           <div className="flex items-center gap-2">
             <Flag className="w-3.5 h-3.5 text-red-500" />
-            <span>Koperasi Desa Merah Putih Indonesia</span>
+            <span>Profil Perusahaan Merah Putih Indonesia</span>
           </div>
         </div>
 

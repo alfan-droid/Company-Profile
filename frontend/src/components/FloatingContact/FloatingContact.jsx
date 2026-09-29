@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 
 const FloatingContact = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
   const isDragging = useRef(false);
 
   return (
@@ -25,11 +25,11 @@ const FloatingContact = () => {
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
     >
       <a
-        href={kopdesData.kontak?.whatsapp ? `https://wa.me/${kopdesData.kontak.whatsapp.replace(/[^0-9]/g, '')}` : '#'}
-        target={kopdesData.kontak?.whatsapp ? '_blank' : undefined}
+        href={profileData.kontak?.whatsapp ? `https://wa.me/${profileData.kontak.whatsapp.replace(/[^0-9]/g, '')}` : '#'}
+        target={profileData.kontak?.whatsapp ? '_blank' : undefined}
         rel="noopener noreferrer"
         onClick={(e) => {
-          if (isDragging.current || !kopdesData.kontak?.whatsapp) {
+          if (isDragging.current || !profileData.kontak?.whatsapp) {
             e.preventDefault();
           }
         }}

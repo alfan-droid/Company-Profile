@@ -23,7 +23,7 @@ const News = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-5xl font-extrabold font-poppins mb-4"
           >
-            Pusat Informasi & Edukasi Koperasi
+            Pusat Informasi & Edukasi Perusahaan
           </motion.h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg">
             Temukan berita kegiatan terbaru, artikel panduan teknologi pertanian, pengumuman SHU, dan kisah inspiratif UMKM binaan.

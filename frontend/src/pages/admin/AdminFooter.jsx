@@ -1,34 +1,34 @@
 import React, { useState } from 'react';
 import { Save, CheckCircle2, Phone, Mail, Facebook, Instagram, Youtube, Clock } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 
 const AdminFooter = () => {
-  const { kopdesData, updateFooter } = useKopdes();
+  const { profileData, updateFooter } = useProfile();
   const [successMessage, setSuccessMessage] = useState('');
   const [isSaving, setIsSaving] = useState(false);
 
   // Form State
-  const [telepon, setTelepon] = useState(kopdesData.kontak?.telepon || '');
-  const [whatsapp, setWhatsapp] = useState(kopdesData.kontak?.whatsapp || '');
-  const [email, setEmail] = useState(kopdesData.kontak?.email || '');
-  const [jamKerja, setJamKerja] = useState(kopdesData.kontak?.jamKerja || '');
+  const [telepon, setTelepon] = useState(profileData.kontak?.telepon || '');
+  const [whatsapp, setWhatsapp] = useState(profileData.kontak?.whatsapp || '');
+  const [email, setEmail] = useState(profileData.kontak?.email || '');
+  const [jamKerja, setJamKerja] = useState(profileData.kontak?.jamKerja || '');
 
-  const [facebook, setFacebook] = useState(kopdesData.kontak?.sosialMedia?.facebook || '');
-  const [instagram, setInstagram] = useState(kopdesData.kontak?.sosialMedia?.instagram || '');
-  const [youtube, setYoutube] = useState(kopdesData.kontak?.sosialMedia?.youtube || '');
+  const [facebook, setFacebook] = useState(profileData.kontak?.sosialMedia?.facebook || '');
+  const [instagram, setInstagram] = useState(profileData.kontak?.sosialMedia?.instagram || '');
+  const [youtube, setYoutube] = useState(profileData.kontak?.sosialMedia?.youtube || '');
 
   // Sinkronkan state jika data kontak selesai di-fetch dari Supabase
   React.useEffect(() => {
-    if (kopdesData?.kontak) {
-      setTelepon(kopdesData.kontak.telepon || '');
-      setWhatsapp(kopdesData.kontak.whatsapp || '');
-      setEmail(kopdesData.kontak.email || '');
-      setJamKerja(kopdesData.kontak.jamKerja || '');
-      setFacebook(kopdesData.kontak.sosialMedia?.facebook || '');
-      setInstagram(kopdesData.kontak.sosialMedia?.instagram || '');
-      setYoutube(kopdesData.kontak.sosialMedia?.youtube || '');
+    if (profileData?.kontak) {
+      setTelepon(profileData.kontak.telepon || '');
+      setWhatsapp(profileData.kontak.whatsapp || '');
+      setEmail(profileData.kontak.email || '');
+      setJamKerja(profileData.kontak.jamKerja || '');
+      setFacebook(profileData.kontak.sosialMedia?.facebook || '');
+      setInstagram(profileData.kontak.sosialMedia?.instagram || '');
+      setYoutube(profileData.kontak.sosialMedia?.youtube || '');
     }
-  }, [kopdesData]);
+  }, [profileData]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -116,7 +116,7 @@ const AdminFooter = () => {
 
             <div>
               <label className="block font-bold text-slate-700 mb-1">
-                Email Resmi Koperasi
+                Email Resmi Perusahaan
               </label>
               <input
                 type="email"

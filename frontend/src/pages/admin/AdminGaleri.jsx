@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Plus, Edit2, Trash2, CheckCircle2, Save, X, Image as ImageIcon, Video } from 'lucide-react';
 import imageCompression from 'browser-image-compression';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 import { supabase } from '../../config/supabaseClient';
 
 const AdminGaleri = () => {
-  const { kopdesData, addGaleri, updateGaleri, deleteGaleri } = useKopdes();
+  const { profileData, addGaleri, updateGaleri, deleteGaleri } = useProfile();
   const [successMessage, setSuccessMessage] = useState('');
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -73,20 +73,20 @@ const AdminGaleri = () => {
         const filePath = `galeri/${fileName}`;
 
         const { error: uploadError } = await supabase.storage
-          .from('kopdes_images')
+          .from('profile_images')
           .upload(filePath, selectedFile);
 
         if (uploadError) {
           console.error('Storage upload error:', uploadError);
           if (uploadError.statusCode === '404' || uploadError.message?.toLowerCase().includes('bucket')) {
-            alert('Upload file gagal: Bucket storage "kopdes_images" belum dibuat di Supabase.\n\nTips: Anda dapat memasukkan "URL Gambar online" (misal link Unsplash/link web) pada kolom URL gambar di bawah, atau buat bucket "kopdes_images" (Public) di menu Storage Supabase.');
+            alert('Upload file gagal: Bucket storage "profile_images" belum dibuat di Supabase.\n\nTips: Anda dapat memasukkan "URL Gambar online" (misal link Unsplash/link web) pada kolom URL gambar di bawah, atau buat bucket "profile_images" (Public) di menu Storage Supabase.');
             return;
           }
           throw uploadError;
         }
 
         const { data } = supabase.storage
-          .from('kopdes_images')
+          .from('profile_images')
           .getPublicUrl(filePath);
 
         if (data?.publicUrl) {
@@ -161,7 +161,7 @@ const AdminGaleri = () => {
         <div>
           <h1 className="text-xl font-extrabold text-slate-900">Pengelolaan Galeri Dokumentasi</h1>
           <p className="text-xs text-slate-600 mt-1">
-            Tambah, edit, dan hapus foto & link video kegiatan (Dinamis). Total item: {kopdesData.galeri.length} Momen.
+            Tambah, edit, dan hapus foto & link video kegiatan (Dinamis). Total item: {profileData.galeri.length} Momen.
           </p>
         </div>
 
@@ -182,7 +182,7 @@ const AdminGaleri = () => {
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {kopdesData.galeri.map((item) => (
+        {profileData.galeri.map((item) => (
           <div
             key={item.id}
             className="bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between"
@@ -209,7 +209,7 @@ const AdminGaleri = () => {
                 <div className="absolute top-2 left-2 pointer-events-none">
                   <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${item.mediaType === 'video' ? 'bg-red-600 text-white' : 'bg-slate-900 text-white'
                     }`}>
-                    {item.mediaType === 'video' ? 'Video Link' : '📷 Foto'}
+                    {item.mediaType === 'video' ? 'Video Link' : 'ðŸ“· Foto'}
                   </span>
                 </div>
               </div>
@@ -270,7 +270,7 @@ const AdminGaleri = () => {
                       }`}
                   >
                     
-                    <span>📷 Foto</span>
+                    <span>ðŸ“· Foto</span>
                   </button>
                   <button
                     type="button"

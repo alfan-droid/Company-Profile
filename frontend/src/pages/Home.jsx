@@ -9,18 +9,18 @@ import LegalitasCard from '../components/Profile/LegalitasCard';
 import PengurusSection from '../components/Profile/PengurusSection';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import ServiceCard from '../components/ServiceCard/ServiceCard';
-import { useKopdes } from '../context/KopdesContext';
+import { useProfile } from '../context/ProfileContext';
 
 const Home = () => {
-  const { kopdesData } = useKopdes();
-  const featuredServices = kopdesData.layanan.slice(0, 3);
+  const { profileData } = useProfile();
+  const featuredServices = profileData.layanan.slice(0, 3);
 
   return (
     <>
       {/* 1. HERO SECTION */}
       <Hero />
 
-      {/* 2. PROFIL DESKRIPSI KOPDES */}
+      {/* 2. PROFIL DESKRIPSI PROFIL PERUSAHAAN */}
       <ProfileSection />
 
       {/* 3. VISI & MISI */}
@@ -38,9 +38,9 @@ const Home = () => {
           
           <SectionTitle
             subtitle="Unit Usaha Terpadu"
-            title="Layanan Utama Koperasi"
+            title="Layanan Utama Perusahaan"
             highlight="Desa"
-            description="Beberapa unit usaha prioritas Kopdes Merah Putih yang melayani kebutuhan warga desa."
+            description="Beberapa unit usaha prioritas Profil Perusahaan yang melayani kebutuhan warga desa."
             badge="Unit Layanan"
           />
 

@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, ArrowRight, Building2, Flag } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 
 const Hero = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
 
   return (
     <section className="pt-28 pb-16 lg:pt-36 lg:pb-20 bg-slate-50 border-b border-slate-200">
@@ -23,13 +23,13 @@ const Hero = () => {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-5">
-              Profil Koperasi Desa <br className="hidden sm:block" />
-              <span className="text-primary">{kopdesData.namaKoperasi || 'Desa Anda'}</span>
+              Profil Profil Perusahaan <br className="hidden sm:block" />
+              <span className="text-primary">{profileData.namaPerusahaan || 'Desa Anda'}</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-base text-slate-600 font-normal leading-relaxed max-w-2xl mb-8">
-              Selamat datang di portal resmi <strong className="text-slate-900 font-semibold">Kopdes Merah Putih - {kopdesData.namaKoperasi || 'Desa Anda'}</strong>. Lembaga ekonomi terpadu untuk pelayanan usaha warga, pemberdayaan anggota, dan ketahanan pangan pedesaan.
+              Selamat datang di portal resmi <strong className="text-slate-900 font-semibold">Profil Perusahaan - {profileData.namaPerusahaan || 'Desa Anda'}</strong>. Lembaga ekonomi terpadu untuk pelayanan usaha warga, pemberdayaan anggota, dan ketahanan pangan pedesaan.
             </p>
 
             {/* Action CTAs */}
@@ -54,7 +54,7 @@ const Hero = () => {
             {/* Micro Legal Info */}
             <div className="flex items-center gap-2 pt-5 border-t border-slate-200 w-full text-xs font-semibold text-slate-600">
               <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0" />
-              <span>Badan Hukum Resmi: {kopdesData.legal?.badanHukum}</span>
+              <span>Badan Hukum Resmi: {profileData.legal?.badanHukum}</span>
             </div>
 
           </motion.div>
@@ -69,17 +69,17 @@ const Hero = () => {
             <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-100">
                 <img
-                  src={kopdesData.heroImage}
-                  alt="Aktivitas Kopdes Merah Putih"
+                  src={profileData.heroImage}
+                  alt="Aktivitas Profil Perusahaan"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-3 text-center border-t border-slate-100 mt-2 flex items-center justify-between">
                 <div className="flex items-center gap-2.5 text-left">
-                  <img src={kopdesData.logo} alt="Logo" className="h-8 w-auto object-contain" />
+                  <img src={profileData.logo} alt="Logo" className="h-8 w-auto object-contain" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900">KOPDES</h4>
-                    <p className="text-[11px] text-slate-500">{kopdesData.namaKoperasi || 'Desa Anda'}</p>
+                    <h4 className="text-xs font-bold text-slate-900">PROFIL PERUSAHAAN</h4>
+                    <p className="text-[11px] text-slate-500">{profileData.namaPerusahaan || 'Desa Anda'}</p>
                   </div>
                 </div>
                 <span className="text-[11px] font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-700">

@@ -1,22 +1,22 @@
 import logoImg from '../assets/logo/logo.png';
 
-export const kopdesData = {
+export const profileData = {
   // Brand & Identity
-  name: "Koperasi Desa Merah Putih",
-  shortName: "Kopdes Merah Putih",
-  branchName: "Kopdes Merah Putih - Desa Kertamukti",
+  name: "Profil Perusahaan Merah Putih",
+  shortName: "Profil Perusahaan",
+  branchName: "Profil Perusahaan - Desa Kertamukti",
   tagline: "Membangun Kemandirian Ekonomi Desa Berbasis Gotong Royong",
   logo: logoImg,
   heroImage: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=800&q=80",
 
   // General Description
-  description: "Koperasi Desa Merah Putih (Kopdes Merah Putih) adalah lembaga ekonomi desa berbasis gotong royong yang berkomitmen memperkuat kedaulatan pangan, mendampingi UMKM lokal, serta menyediakan layanan usaha terpadu bagi warga desa secara profesional, adil, dan terpercaya.",
+  description: "Profil Perusahaan Merah Putih (Profil Perusahaan) adalah lembaga ekonomi desa berbasis gotong royong yang berkomitmen memperkuat kedaulatan pangan, mendampingi UMKM lokal, serta menyediakan layanan usaha terpadu bagi warga desa secara profesional, adil, dan terpercaya.",
 
   // Legal Status / Badan Hukum (2 Items)
   legal: {
     badanHukum: "AHU-0012845.AH.01.26 Tahun 2024",
     wilayahKerja: "Desa Kertamukti, Kec. Ciasem, Kab. Subang, Jawa Barat",
-    statusKeanggotaan: "Terdaftar Resmi di Kementerian Koperasi & UKM RI",
+    statusKeanggotaan: "Terdaftar Resmi di Kementerian Perusahaan & UKM RI",
   },
 
   // Vision & Mission
@@ -34,7 +34,7 @@ export const kopdesData = {
       nama: "H. Suryana, S.P.",
       jabatan: "Ketua Pengurus",
       foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-      pesan: "Kopdes Merah Putih hadir sebagai benteng ekonomi desa untuk memastikan hasil jerih payah warga kembali untuk kesejahteraan bersama."
+      pesan: "Profil Perusahaan hadir sebagai benteng ekonomi desa untuk memastikan hasil jerih payah warga kembali untuk kesejahteraan bersama."
     },
     sekretaris: {
       nama: "Ahmad Budiman, S.T.",
@@ -52,7 +52,7 @@ export const kopdesData = {
       nama: "Drs. H. Mulyadi, M.Si.",
       jabatan: "Ketua Pengawas",
       foto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
-      pesan: "Kami memastikan seluruh operasional Kopdes Merah Putih senantiasa mematuhi regulasi hukum dan AD/ART koperasi."
+      pesan: "Kami memastikan seluruh operasional Profil Perusahaan senantiasa mematuhi regulasi hukum dan AD/ART perusahaan."
     }
   },
 
@@ -116,7 +116,7 @@ export const kopdesData = {
     },
     {
       id: "layanan-digital",
-      title: "Informasi & Layanan Digital Kopdes",
+      title: "Informasi & Layanan Digital Profile",
       icon: "Smartphone",
       description: "Kios informasi digital untuk pengecekan data anggota, informasi program bantuan, dan pengajuan layanan.",
       features: ["Portal Informasi Resmi", "Cek Saldo Cepat", "Kirim Pesan WhatsApp"]
@@ -127,16 +127,16 @@ export const kopdesData = {
   galeri: [
     {
       id: 1,
-      title: "Musyawarah Anggota Tahunan & Pembagian SHU Kopdes Merah Putih",
-      caption: "Pelaksanaan Musyawarah Anggota Tahunan (RAT) dihadiri oleh tokoh masyarakat dan pengurus Dinas Koperasi.",
+      title: "Musyawarah Anggota Tahunan & Pembagian SHU Profil Perusahaan",
+      caption: "Pelaksanaan Musyawarah Anggota Tahunan (RAT) dihadiri oleh tokoh masyarakat dan pengurus Dinas Perusahaan.",
       mediaType: "image",
       url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
       date: "15 Maret 2026"
     },
     {
       id: 2,
-      title: "Panen Raya Padi Bersama Kelompok Tani Binaan Kopdes",
-      caption: "Kegiatan panen raya padi varietas unggul hasil pendampingan pupuk organik dari unit saprotan Kopdes.",
+      title: "Panen Raya Padi Bersama Kelompok Tani Binaan Profile",
+      caption: "Kegiatan panen raya padi varietas unggul hasil pendampingan pupuk organik dari unit saprotan Profile.",
       mediaType: "image",
       url: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
       date: "28 April 2026"
@@ -167,7 +167,7 @@ export const kopdesData = {
     },
     {
       id: 6,
-      title: "Kunjungan Kerja Tim Pengawas & Dinas Koperasi Kabupaten",
+      title: "Kunjungan Kerja Tim Pengawas & Dinas Perusahaan Kabupaten",
       caption: "Inspeksi rutin dan verifikasi administrasi pembukuan oleh tim pengawas independen.",
       mediaType: "image",
       url: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
@@ -180,7 +180,7 @@ export const kopdesData = {
     alamat: "Jl. Balai Desa Kertamukti No. 01, RT 04/RW 02, Kec. Ciasem, Kab. Subang, Jawa Barat 41256",
     telepon: "(0260) 450-889",
     whatsapp: "+62 821-2233-4455",
-    email: "info@kopdesmerahputih.id",
+    email: "info@profilemerahputih.id",
     jamKerja: "Senin - Sabtu: 08.00 - 15.00 WIB",
     googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126830.07604473855!2d107.65!3d-6.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6945a0b7!2sDesa%20Kertamukti%2C%20Ciasem%2C%20Subang!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
     googleMapsLink: "https://maps.google.com/?q=Desa+Kertamukti+Ciasem+Subang",

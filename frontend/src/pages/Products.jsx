@@ -105,7 +105,7 @@ const Products = () => {
 
                 <div className="p-5 pt-0">
                   <a
-                    href={`https://wa.me/6282145678900?text=Halo%20Koperasi,%20saya%20tertarik%20pesan%20${encodeURIComponent(item.name)}`}
+                    href={`https://wa.me/6282145678900?text=Halo%20Perusahaan,%20saya%20tertarik%20pesan%20${encodeURIComponent(item.name)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-slate-100 hover:bg-primary-600 text-slate-700 hover:text-white font-bold text-xs transition-all"

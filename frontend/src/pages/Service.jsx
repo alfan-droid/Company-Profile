@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import ServiceCard from '../components/ServiceCard/ServiceCard';
-import { useKopdes } from '../context/KopdesContext';
+import { useProfile } from '../context/ProfileContext';
 import { Building2, Phone } from 'lucide-react';
 
 const Service = () => {
-  const { kopdesData } = useKopdes();
-  const servicesList = kopdesData.layanan.slice(0, 9);
+  const { profileData } = useProfile();
+  const servicesList = profileData.layanan.slice(0, 9);
 
   return (
     <div className="pt-24 lg:pt-32">
@@ -15,10 +15,10 @@ const Service = () => {
       <section className="py-14 bg-slate-900 text-white relative overflow-hidden border-b border-slate-800">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-3">
-            Unit Layanan & Usaha Koperasi
+            Unit Layanan & Usaha Perusahaan
           </h1>
           <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            Daftar unit layanan usaha resmi Kopdes Merah Putih untuk melayani dan memberdayakan masyarakat desa.
+            Daftar unit layanan usaha resmi Profil Perusahaan untuk melayani dan memberdayakan masyarakat desa.
           </p>
         </div>
       </section>
@@ -31,7 +31,7 @@ const Service = () => {
             subtitle="Fasilitas & Program Usaha"
             title="Daftar Unit Layanan Usaha"
             highlight="Tersedia"
-            description="Kopdes Merah Putih mengelola unit layanan terpilih sesuai kebutuhan sosial-ekonomi warga desa setempat."
+            description="Profil Perusahaan mengelola unit layanan terpilih sesuai kebutuhan sosial-ekonomi warga desa setempat."
             badge="Profil Unit Usaha"
           />
 
@@ -56,16 +56,16 @@ const Service = () => {
               </div>
               <div>
                 <h4 className="text-base font-bold text-slate-900">Butuh Informasi Pengajuan Layanan?</h4>
-                <p className="text-xs text-slate-600">Pengurus Kopdes Merah Putih siap melayani konsultasi pendaftaran dan keanggotaan.</p>
+                <p className="text-xs text-slate-600">Pengurus Profil Perusahaan siap melayani konsultasi pendaftaran dan keanggotaan.</p>
               </div>
             </div>
 
             <a
-              href={kopdesData.kontak?.whatsapp ? `https://wa.me/${kopdesData.kontak.whatsapp.replace(/[^0-9]/g, '')}` : '#'}
-              target={kopdesData.kontak?.whatsapp ? '_blank' : undefined}
+              href={profileData.kontak?.whatsapp ? `https://wa.me/${profileData.kontak.whatsapp.replace(/[^0-9]/g, '')}` : '#'}
+              target={profileData.kontak?.whatsapp ? '_blank' : undefined}
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white text-xs font-bold hover:bg-primary-700 shadow-sm transition-colors flex-shrink-0"
-              onClick={(e) => !kopdesData.kontak?.whatsapp && e.preventDefault()}
+              onClick={(e) => !profileData.kontak?.whatsapp && e.preventDefault()}
             >
               <Phone className="w-4 h-4" />
               <span>Hubungi Pengurus WA</span>

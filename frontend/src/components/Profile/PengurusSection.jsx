@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
 const PengurusSection = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
 
   const pengurusList = [
     { key: 'ketua', title: 'Ketua Pengurus', badge: 'Ketua', color: 'bg-primary text-white' },
@@ -20,14 +20,14 @@ const PengurusSection = () => {
         <SectionTitle
           subtitle="Struktur Organisasi"
           title="Struktur Pengurus & Pengawas"
-          highlight="Kopdes"
-          description="Para pengemban amanah yang bertanggung jawab mengelola operasional dan mengawasi jalannya usaha koperasi."
+          highlight="Profile"
+          description="Para pengemban amanah yang bertanggung jawab mengelola operasional dan mengawasi jalannya usaha perusahaan."
           badge="Manajemen Resmi"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pengurusList.map((item, index) => {
-            const data = kopdesData.pengurus[item.key];
+            const data = profileData.pengurus[item.key];
             if (!data) return null;
 
             return (
@@ -70,7 +70,7 @@ const PengurusSection = () => {
 
                 <div className="px-5 pb-4 pt-0 border-t border-slate-100 mt-auto">
                   <span className="text-[11px] font-semibold text-slate-400">
-                    Pengurus Resmi Kopdes Merah Putih
+                    Pengurus Resmi Profil Perusahaan
                   </span>
                 </div>
               </motion.div>

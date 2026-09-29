@@ -1,22 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FileText, MapPin, CheckCircle2 } from 'lucide-react';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 import SectionTitle from '../SectionTitle/SectionTitle';
 
 const LegalitasCard = () => {
-  const { kopdesData } = useKopdes();
+  const { profileData } = useProfile();
 
   const legalItems = [
     {
       title: "Nomor Badan Hukum",
-      val: kopdesData.legal.badanHukum,
+      val: profileData.legal.badanHukum,
       sub: "Kementerian Hukum & HAM RI",
       icon: FileText
     },
     {
       title: "Wilayah Operasional",
-      val: kopdesData.legal.wilayahKerja,
+      val: profileData.legal.wilayahKerja,
       sub: "Izin Usaha Kabupaten",
       icon: MapPin
     }
@@ -30,7 +30,7 @@ const LegalitasCard = () => {
           subtitle="Kepastian Hukum"
           title="Legalitas & Badan Hukum"
           highlight="Resmi"
-          description="Kopdes Merah Putih beroperasi secara sah dan memenuhi seluruh regulasi perundang-undangan Republik Indonesia."
+          description="Profil Perusahaan beroperasi secara sah dan memenuhi seluruh regulasi perundang-undangan Republik Indonesia."
           badge="Resmi & Legal"
         />
 

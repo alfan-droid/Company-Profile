@@ -1,86 +1,86 @@
 import React, { useState } from 'react';
 import { Save } from 'lucide-react';
 import imageCompression from 'browser-image-compression';
-import { useKopdes } from '../../context/KopdesContext';
+import { useProfile } from '../../context/ProfileContext';
 import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../config/supabaseClient';
 
 const AdminProfile = () => {
-  const { kopdesData, updateProfileStatis, updateProfileDinamis } = useKopdes();
+  const { profileData, updateProfileStatis, updateProfileDinamis } = useProfile();
   const { user } = useAuth();
   const [successMessage, setSuccessMessage] = useState('');
   const [isSaving, setIsSaving] = useState(false);
 
-  const [namaKoperasi, setNamaKoperasi] = useState(kopdesData.namaKoperasi);
-  const [badanHukum, setBadanHukum] = useState(kopdesData.legal.badanHukum);
-  const [wilayahKerja, setWilayahKerja] = useState(kopdesData.legal.wilayahKerja);
-  const [visi, setVisi] = useState(kopdesData.visi);
-  const [misi, setMisi] = useState(kopdesData.misi || '');
-  const [description, setDescription] = useState(kopdesData.description);
-  const [heroImage, setHeroImage] = useState(kopdesData.heroImage);
+  const [namaPerusahaan, setNamaPerusahaan] = useState(profileData.namaPerusahaan);
+  const [badanHukum, setBadanHukum] = useState(profileData.legal.badanHukum);
+  const [wilayahKerja, setWilayahKerja] = useState(profileData.legal.wilayahKerja);
+  const [visi, setVisi] = useState(profileData.visi);
+  const [misi, setMisi] = useState(profileData.misi || '');
+  const [description, setDescription] = useState(profileData.description);
+  const [heroImage, setHeroImage] = useState(profileData.heroImage);
 
-  const [alamat, setAlamat] = useState(kopdesData.kontak.alamat);
-  const [googleMapsLink, setGoogleMapsLink] = useState(kopdesData.kontak.googleMapsLink);
-  const [googleMapsEmbedUrl, setGoogleMapsEmbedUrl] = useState(kopdesData.kontak.googleMapsEmbedUrl);
+  const [alamat, setAlamat] = useState(profileData.kontak.alamat);
+  const [googleMapsLink, setGoogleMapsLink] = useState(profileData.kontak.googleMapsLink);
+  const [googleMapsEmbedUrl, setGoogleMapsEmbedUrl] = useState(profileData.kontak.googleMapsEmbedUrl);
 
   const [ketua, setKetua] = useState({
-    nama: kopdesData.pengurus.ketua?.nama || '',
-    foto: kopdesData.pengurus.ketua?.foto || '',
-    pesan: kopdesData.pengurus.ketua?.pesan || ''
+    nama: profileData.pengurus.ketua?.nama || '',
+    foto: profileData.pengurus.ketua?.foto || '',
+    pesan: profileData.pengurus.ketua?.pesan || ''
   });
 
   const [sekretaris, setSekretaris] = useState({
-    nama: kopdesData.pengurus.sekretaris?.nama || '',
-    foto: kopdesData.pengurus.sekretaris?.foto || '',
-    pesan: kopdesData.pengurus.sekretaris?.pesan || ''
+    nama: profileData.pengurus.sekretaris?.nama || '',
+    foto: profileData.pengurus.sekretaris?.foto || '',
+    pesan: profileData.pengurus.sekretaris?.pesan || ''
   });
 
   const [bendahara, setBendahara] = useState({
-    nama: kopdesData.pengurus.bendahara?.nama || '',
-    foto: kopdesData.pengurus.bendahara?.foto || '',
-    pesan: kopdesData.pengurus.bendahara?.pesan || ''
+    nama: profileData.pengurus.bendahara?.nama || '',
+    foto: profileData.pengurus.bendahara?.foto || '',
+    pesan: profileData.pengurus.bendahara?.pesan || ''
   });
 
   const [pengawas, setPengawas] = useState({
-    nama: kopdesData.pengurus.pengawas?.nama || '',
-    foto: kopdesData.pengurus.pengawas?.foto || '',
-    pesan: kopdesData.pengurus.pengawas?.pesan || ''
+    nama: profileData.pengurus.pengawas?.nama || '',
+    foto: profileData.pengurus.pengawas?.foto || '',
+    pesan: profileData.pengurus.pengawas?.pesan || ''
   });
 
   React.useEffect(() => {
-    setNamaKoperasi(kopdesData.namaKoperasi || '');
-    setBadanHukum(kopdesData.legal?.badanHukum || '');
-    setWilayahKerja(kopdesData.legal?.wilayahKerja || '');
-    setVisi(kopdesData.visi || '');
-    setMisi(kopdesData.misi || '');
-    setDescription(kopdesData.description || '');
-    setHeroImage(kopdesData.heroImage || '');
+    setNamaPerusahaan(profileData.namaPerusahaan || '');
+    setBadanHukum(profileData.legal?.badanHukum || '');
+    setWilayahKerja(profileData.legal?.wilayahKerja || '');
+    setVisi(profileData.visi || '');
+    setMisi(profileData.misi || '');
+    setDescription(profileData.description || '');
+    setHeroImage(profileData.heroImage || '');
 
-    setAlamat(kopdesData.kontak?.alamat || '');
-    setGoogleMapsLink(kopdesData.kontak?.googleMapsLink || '');
-    setGoogleMapsEmbedUrl(kopdesData.kontak?.googleMapsEmbedUrl || '');
+    setAlamat(profileData.kontak?.alamat || '');
+    setGoogleMapsLink(profileData.kontak?.googleMapsLink || '');
+    setGoogleMapsEmbedUrl(profileData.kontak?.googleMapsEmbedUrl || '');
 
     setKetua({
-      nama: kopdesData.pengurus?.ketua?.nama || '',
-      foto: kopdesData.pengurus?.ketua?.foto || '',
-      pesan: kopdesData.pengurus?.ketua?.pesan || ''
+      nama: profileData.pengurus?.ketua?.nama || '',
+      foto: profileData.pengurus?.ketua?.foto || '',
+      pesan: profileData.pengurus?.ketua?.pesan || ''
     });
     setSekretaris({
-      nama: kopdesData.pengurus?.sekretaris?.nama || '',
-      foto: kopdesData.pengurus?.sekretaris?.foto || '',
-      pesan: kopdesData.pengurus?.sekretaris?.pesan || ''
+      nama: profileData.pengurus?.sekretaris?.nama || '',
+      foto: profileData.pengurus?.sekretaris?.foto || '',
+      pesan: profileData.pengurus?.sekretaris?.pesan || ''
     });
     setBendahara({
-      nama: kopdesData.pengurus?.bendahara?.nama || '',
-      foto: kopdesData.pengurus?.bendahara?.foto || '',
-      pesan: kopdesData.pengurus?.bendahara?.pesan || ''
+      nama: profileData.pengurus?.bendahara?.nama || '',
+      foto: profileData.pengurus?.bendahara?.foto || '',
+      pesan: profileData.pengurus?.bendahara?.pesan || ''
     });
     setPengawas({
-      nama: kopdesData.pengurus?.pengawas?.nama || '',
-      foto: kopdesData.pengurus?.pengawas?.foto || '',
-      pesan: kopdesData.pengurus?.pengawas?.pesan || ''
+      nama: profileData.pengurus?.pengawas?.nama || '',
+      foto: profileData.pengurus?.pengawas?.foto || '',
+      pesan: profileData.pengurus?.pengawas?.pesan || ''
     });
-  }, [kopdesData]);
+  }, [profileData]);
 
   const handleCombinedSubmit = async (e) => {
     e.preventDefault();
@@ -88,7 +88,7 @@ const AdminProfile = () => {
     try {
       // 1. Simpan Data Statis
       await updateProfileStatis({
-        namaKoperasi,
+        namaPerusahaan,
         badanHukum,
         wilayahKerja,
         visi,
@@ -143,13 +143,13 @@ const AdminProfile = () => {
       const filePath = `profiles/${fileName}`;
 
       const { error: uploadError } = await supabase.storage
-        .from('kopdes_images')
+        .from('profile_images')
         .upload(filePath, compressedFile);
 
       if (uploadError) throw uploadError;
 
       const { data } = supabase.storage
-        .from('kopdes_images')
+        .from('profile_images')
         .getPublicUrl(filePath);
 
       if (data?.publicUrl) {
@@ -188,13 +188,13 @@ const AdminProfile = () => {
       const filePath = `hero/${fileName}`;
 
       const { error: uploadError } = await supabase.storage
-        .from('kopdes_images')
+        .from('profile_images')
         .upload(filePath, compressedFile);
 
       if (uploadError) throw uploadError;
 
       const { data } = supabase.storage
-        .from('kopdes_images')
+        .from('profile_images')
         .getPublicUrl(filePath);
 
       if (data?.publicUrl) {
@@ -241,16 +241,16 @@ const AdminProfile = () => {
           <div className="grid grid-cols-1 gap-4 text-xs pt-2">
           <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5">
             <span className="font-bold text-slate-700 flex items-center gap-1.5 mb-2">
-               Nama Daerah KOPDES
+               Nama Daerah PROFIL PERUSAHAAN
             </span>
             <input
               type="text"
-              value={namaKoperasi}
-              onChange={(e) => setNamaKoperasi(e.target.value)}
+              value={namaPerusahaan}
+              onChange={(e) => setNamaPerusahaan(e.target.value)}
               className="w-full px-3 py-2 rounded-lg border border-slate-300 font-semibold text-slate-900 focus:outline-none focus:border-primary text-xs"
               placeholder="Contoh: Desa Kertamukti"
             />
-            <p className="text-[11px] text-slate-500">Akan ditampilkan sebagai bagian dari KOPDES Merah Putih - [Nama Daerah]</p>
+            <p className="text-[11px] text-slate-500">Akan ditampilkan sebagai bagian dari PROFIL PERUSAHAAN Merah Putih - [Nama Daerah]</p>
           </div>
         </div>
 
@@ -295,7 +295,7 @@ const AdminProfile = () => {
               onChange={(e) => setBadanHukum(e.target.value)}
               className="w-full px-3 py-2 rounded-lg border border-slate-300 font-semibold text-slate-900 focus:outline-none focus:border-primary text-xs"
             />
-            <p className="text-[11px] text-slate-500">Terdaftar di Kemenkumham RI & Kementerian Koperasi UKM</p>
+            <p className="text-[11px] text-slate-500">Terdaftar di Kemenkumham RI & Kementerian Perusahaan UKM</p>
           </div>
 
           <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5">
@@ -327,7 +327,7 @@ const AdminProfile = () => {
 
           <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-1.5">
             <span className="font-bold text-slate-700 flex items-center gap-1.5 mb-2">
-               Misi Koperasi
+               Misi Perusahaan
             </span>
             <textarea
               rows={3}

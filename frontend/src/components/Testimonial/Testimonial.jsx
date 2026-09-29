@@ -79,7 +79,7 @@ const Testimonial = () => {
 
                 <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
                   <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                    Anggota Koperasi Terverifikasi
+                    Anggota Perusahaan Terverifikasi
                   </span>
 
                   <div className="flex items-center gap-2">
