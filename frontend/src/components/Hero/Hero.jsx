@@ -23,13 +23,13 @@ const Hero = () => {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-5">
-              Profil Profil Perusahaan <br className="hidden sm:block" />
-              <span className="text-primary">{profileData.namaPerusahaan || 'Desa Anda'}</span>
+              Profil Resmi <br className="hidden sm:block" />
+              <span className="text-primary">{profileData.namaPerusahaan || profileData.name || 'Perusahaan Anda'}</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-base text-slate-600 font-normal leading-relaxed max-w-2xl mb-8">
-              Selamat datang di portal resmi <strong className="text-slate-900 font-semibold">Profil Perusahaan - {profileData.namaPerusahaan || 'Desa Anda'}</strong>. Lembaga ekonomi terpadu untuk pelayanan usaha warga, pemberdayaan anggota, dan ketahanan pangan pedesaan.
+              Selamat datang di portal resmi <strong className="text-slate-900 font-semibold">{profileData.namaPerusahaan || profileData.name || 'Perusahaan Anda'}</strong>. Mitra terpercaya dalam menghadirkan solusi profesional, produk berkualitas, dan layanan terbaik.
             </p>
 
             {/* Action CTAs */}

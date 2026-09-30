@@ -141,10 +141,10 @@ const Navbar = () => {
             />
             <div className="hidden sm:flex flex-col border-l border-slate-200 pl-3.5">
               <span className="font-bold text-base leading-none text-slate-900 tracking-tight">
-                PROFIL PERUSAHAAN <span className="uppercase">{profileData.namaPerusahaan || 'Desa Anda'}</span>
+                {profileData.namaPerusahaan || profileData.name || 'Profil Perusahaan'}
               </span>
               <span className="text-[11px] font-semibold text-primary uppercase tracking-wider mt-1">
-                Portal Resmi Profil Perusahaan
+                Portal Resmi Perusahaan
               </span>
             </div>
           </Link>

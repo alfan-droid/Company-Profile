@@ -3,6 +3,7 @@ import logoImg from '../assets/logo/logo.png';
 export const profileData = {
   // Brand & Identity
   name: "Profil Perusahaan Merah Putih",
+  namaPerusahaan: "Profil Perusahaan Merah Putih",
   shortName: "Profil Perusahaan",
   branchName: "Profil Perusahaan - Desa Kertamukti",
   tagline: "Membangun Kemandirian Ekonomi Desa Berbasis Gotong Royong",
